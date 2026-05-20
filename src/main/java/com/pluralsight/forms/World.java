@@ -102,6 +102,7 @@ public class World extends JFrame {
         this.setVisible(true);
 
         this.turtles = new ArrayList<Turtle>();
+        this.blit();
     }
 
     /**
@@ -171,16 +172,21 @@ public class World extends JFrame {
      * Saves the current image to the specified file
      *
      * @param filename The name of the file to write
+     * @param folderName The name of the folder you want it saved in
      * @throws IllegalArgumentException if any parameter is null or if the filename is not an image filename
      */
-    public void saveAs(String filename) {
+    public void saveAs(String filename, String folderName) {
         try {
             int dot = filename.lastIndexOf('.');
             if (dot < 0 || dot == filename.length()-1) {
                 throw new IllegalArgumentException("The filename must end in a valid image extension, like .png or .jpg");
             }
+            File directory = new File(folderName);
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
             String ext = filename.substring(dot+1).toLowerCase();
-            File f = new File(filename);
+            File f = new File(directory,filename);
             ImageIO.write(this.front, ext, f);
         } catch(Throwable t) {
             System.err.println("Error saving file: " + t.getMessage());
