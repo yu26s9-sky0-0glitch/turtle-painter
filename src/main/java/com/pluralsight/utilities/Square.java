@@ -21,6 +21,9 @@ public class Square extends Shape{
         this.sideLength = sideLength;
     }
 
+    /**
+     * paints a square
+     */
     @Override
     public void paint() {
         Turtle t = getTurtle();
@@ -31,8 +34,8 @@ public class Square extends Shape{
         t.setPenWidth(getBorder());
         int side = 0;
         while(side<4){
-            t.turnRight(90);
             t.forward(sideLength);
+            t.turnRight(90);
             side++;
         }
     }

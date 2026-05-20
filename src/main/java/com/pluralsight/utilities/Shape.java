@@ -1,7 +1,5 @@
 package com.pluralsight.utilities;
 import com.pluralsight.forms.Turtle;
-import com.pluralsight.forms.World;
-
 import java.awt.*;
 import java.awt.geom.Point2D;
 

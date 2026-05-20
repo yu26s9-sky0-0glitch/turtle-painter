@@ -26,6 +26,10 @@ public class Triangle extends Shape{
         double heightSquared = Math.pow(side, 2);
         return Math.sqrt(widthSquared + heightSquared);
     }
+
+    /**
+     * going to paint a Right triangle
+     */
     @Override
     public void paint() {
 
@@ -42,5 +46,23 @@ public class Triangle extends Shape{
         t.turnLeft(135);
         t.forward(hypotenuse);
 
+    }
+
+    /**
+     * going to paint Equilateral triangle
+     */
+    public void paintEquilateral(){
+        Turtle t = getTurtle();
+        t.penUp();
+        t.goTo(getLocation().getX(),getLocation().getY());
+        t.penDown();
+        t.setColor(getColor());
+        t.setPenWidth(getBorder());
+        int countSide = 0;
+        while (countSide<3){
+            t.forward(side);
+            t.turnRight(120);
+            countSide++;
+        }
     }
 }
