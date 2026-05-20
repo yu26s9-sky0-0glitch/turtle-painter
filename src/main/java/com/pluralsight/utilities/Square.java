@@ -24,6 +24,11 @@ public class Square extends Shape{
     @Override
     public void paint() {
         Turtle t = getTurtle();
+        t.penUp();
+        t.goTo(getLocation().getX(),getLocation().getY());
+        t.penDown();
+        t.setColor(getColor());
+        t.setPenWidth(getBorder());
         int side = 0;
         while(side<4){
             t.turnRight(90);
