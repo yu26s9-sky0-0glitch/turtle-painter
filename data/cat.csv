@@ -1,0 +1,13 @@
+width|height|background
+914|978|-16777216
+shape|x|y|border|color|size
+square|-50|50|3|-1|100.0
+equilateral_triangle|-50|50|3|-1|40.0
+equilateral_triangle|10|50|3|-1|40.0
+circle|-30|30|3|-1|12.0
+circle|30|30|3|-1|12.0
+equilateral_triangle|-10|-10|3|-1|20.0
+square|-100|-50|3|-1|200.0
+square|-70|-250|3|-1|40.0
+square|30|-250|3|-1|40.0
+right_triangle|-150|-150|3|-1|50.0

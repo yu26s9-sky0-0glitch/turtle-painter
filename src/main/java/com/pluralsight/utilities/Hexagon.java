@@ -30,6 +30,7 @@ public class Hexagon extends Shape{
         t.penUp();
         t.goTo(getLocation().getX(),getLocation().getY());
         t.penDown();
+        t.setHeading(0);
         t.setColor(getColor());
         t.setPenWidth(getBorder());
         int sidecount = 0;
@@ -38,5 +39,10 @@ public class Hexagon extends Shape{
             t.turnRight(60);
             sidecount++;
         }
+    }
+
+    @Override
+    public Shape clone() {
+        return new Hexagon(this.getTurtle(), this.getLocation(), this.getColor(), this.getBorder(), this.side);
     }
 }

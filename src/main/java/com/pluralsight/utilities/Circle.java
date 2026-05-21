@@ -27,6 +27,7 @@ public class Circle extends Shape{
         t.penUp();
         t.goTo(getLocation().getX(),getLocation().getY());
         t.penDown();
+        t.setHeading(0);
         t.setColor(getColor());
         t.setPenWidth(getBorder());
         double stepSize = (2 * Math.PI * radius) / 36;
@@ -37,5 +38,10 @@ public class Circle extends Shape{
             t.turnRight(10); // Turn 10 degrees at a time
             steps++;
         }
+    }
+
+    @Override
+    public Shape clone() {
+        return new Circle(this.getTurtle(), this.getLocation(), this.getColor(), this.getBorder(), this.radius);
     }
 }

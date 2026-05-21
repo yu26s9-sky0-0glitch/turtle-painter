@@ -6,20 +6,22 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Square extends Shape{
-    private double sideLength;
+    private double side;
 
-    public Square(Turtle turtle, Point2D location, Color color, int border, double sideLength) {
+    public Square(Turtle turtle, Point2D location, Color color, int border, double side) {
         super(turtle, location, color, border);
-        this.sideLength = sideLength;
+        this.side = side;
     }
 
-    public double getSideLength() {
-        return sideLength;
+    public double getSide() {
+        return side;
     }
 
-    public void setSideLength(double sideLength) {
-        this.sideLength = sideLength;
+    public void setSide(double side) {
+        this.side = side;
     }
+
+
 
     /**
      * paints a square
@@ -30,13 +32,19 @@ public class Square extends Shape{
         t.penUp();
         t.goTo(getLocation().getX(),getLocation().getY());
         t.penDown();
+        t.setHeading(0);
         t.setColor(getColor());
         t.setPenWidth(getBorder());
-        int side = 0;
-        while(side<4){
-            t.forward(sideLength);
+        int sidecount = 0;
+        while(sidecount<4){
+            t.forward(side);
             t.turnRight(90);
-            side++;
+            sidecount++;
         }
+    }
+
+    @Override
+    public Shape clone() {
+        return new Square(this.getTurtle(), this.getLocation(), this.getColor(), this.getBorder(), this.side);
     }
 }

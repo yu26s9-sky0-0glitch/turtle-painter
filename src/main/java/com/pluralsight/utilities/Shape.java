@@ -51,4 +51,5 @@ public abstract class Shape {
         this.border = border;
     }
     public abstract void paint();
+   public abstract Shape clone();
 }

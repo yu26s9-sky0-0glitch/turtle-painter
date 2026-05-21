@@ -137,13 +137,20 @@ public class Console {
      */
     public static Color promptForColor(String prompt) {
         System.out.println(prompt);
-        System.out.println("1) Black");
-        System.out.println("2) White");
-        System.out.println("3) Red");
-        System.out.println("4) Blue");
-        System.out.println("5) Green");
-        System.out.println("6) Pink");
-        int choice = promptForInt("Select an option (1-6): ", 1, 6);
+        System.out.println("""
+                1) Black
+                2) White
+                3) Red
+                4) Blue
+                5) Green
+                6) Pink
+                7) Gray
+                8) Yellow
+                9) Orange
+                10) Cyan
+                11) Magenta
+                -> """);
+        int choice = promptForInt("Select an option (1-11): ", 1, 11);
         return switch (choice) {
             case 1 -> Color.BLACK;
             case 2 -> Color.WHITE;
@@ -151,6 +158,11 @@ public class Console {
             case 4 -> Color.BLUE;
             case 5 -> Color.GREEN;
             case 6 -> Color.PINK;
+            case 7 -> Color.GRAY;
+            case 8 -> Color.YELLOW;
+            case 9 -> Color.ORANGE;
+            case 10 -> Color.CYAN;
+            case 11 -> Color.MAGENTA;
             default -> Color.BLACK;
         };
     }
